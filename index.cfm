@@ -2,7 +2,15 @@
 <cfinclude template="header.cfm" />
 
 <!--- Page contents can go here --->
-	
+<cfquery name="getNewProducts" datasource="fit1012" username="fit1012" password="fit1012"> 	
+select * from PP_PARTS where PART_NUMBER like 'A%' OR  PART_NUMBER like 'BA%' 
+</cfquery>
+<cfquery name="getSaleProducts" datasource="fit1012" username="fit1012" password="fit1012"> 	
+select * from PP_PARTS where UNITS_ON_HAND > 90
+</cfquery>
+<cfquery name="getBestProducts" datasource="fit1012" username="fit1012" password="fit1012"> 	
+select * from PP_PARTS where UNIT_PRICE > 200
+</cfquery>
 <div id="homeSlider">
 	<div class="slide" id="slide-1">
 		<img src="http://placehold.it/620x330/" alt="Placeholder" />
@@ -46,61 +54,37 @@
 	<div class="col first">
 		<h3>New Products</h3>
 		<ul>
-			<li>
-				<img src="http://placehold.it/90x90/" alt="Placeholder" />
-				<p class="productName">Lorem ipsum dolar sit amet</p>
-				<p class="productPrice">$16.00</p>
-			</li>
-			<li>
-				<img src="http://placehold.it/90x90/" alt="Placeholder" />
-				<p class="productName">Lorem ipsum dolar sit amet</p>
-				<p class="productPrice">$16.00</p>
-			</li>
-			<li>
-				<img src="http://placehold.it/90x90/" alt="Placeholder" />
-				<p class="productName">Lorem ipsum dolar sit amet</p>
-				<p class="productPrice">$16.00</p>
-			</li>
+			<cfoutput query="getNewProducts">
+            <li>
+                    <img src="img/products/thumbnails/#lcase(PART_NUMBER)#.JPG" alt="#PART_DESCRIPTION#" />
+                    <p class="productName">#PART_DESCRIPTION#</p>
+                    <p class="productPrice">$#UNIT_PRICE#</p>
+            </li>
+            </cfoutput>
 		</ul>
 	</div>
 	<div class="col">
 		<h3>On Sale</h3>
 		<ul>
-			<li>
-				<img src="http://placehold.it/90x90/" alt="Placeholder" />
-				<p class="productName">Lorem ipsum dolar sit amet</p>
-				<p class="productPrice">$16.00</p>
-			</li>
-			<li>
-				<img src="http://placehold.it/90x90/" alt="Placeholder" />
-				<p class="productName">Lorem ipsum dolar sit amet</p>
-				<p class="productPrice">$16.00</p>
-			</li>
-			<li>
-				<img src="http://placehold.it/90x90/" alt="Placeholder" />
-				<p class="productName">Lorem ipsum dolar sit amet</p>
-				<p class="productPrice">$16.00</p>
-			</li>
+			<cfoutput query="getSaleProducts">
+            <li>
+                    <img src="img/products/thumbnails/#lcase(PART_NUMBER)#.JPG" alt="#PART_DESCRIPTION#" />
+                    <p class="productName">#PART_DESCRIPTION#</p>
+                    <p class="productPrice">$#UNIT_PRICE#</p>
+            </li>
+            </cfoutput>
 		</ul>
 	</div>
 	<div class="col">
 		<h3>Best Sellers</h3>
 		<ul>
-			<li>
-				<img src="http://placehold.it/90x90/" alt="Placeholder" />
-				<p class="productName">Lorem ipsum dolar sit amet</p>
-				<p class="productPrice">$16.00</p>
-			</li>
-			<li>
-				<img src="http://placehold.it/90x90/" alt="Placeholder" />
-				<p class="productName">Lorem ipsum dolar sit amet</p>
-				<p class="productPrice">$16.00</p>
-			</li>
-			<li>
-				<img src="http://placehold.it/90x90/" alt="Placeholder" />
-				<p class="productName">Lorem ipsum dolar sit amet</p>
-				<p class="productPrice">$16.00</p>
-			</li>
+			<cfoutput query="getBestProducts">
+            <li>
+                    <img src="img/products/thumbnails/#lcase(PART_NUMBER)#.JPG" alt="#PART_DESCRIPTION#" />
+                    <p class="productName">#PART_DESCRIPTION#</p>
+                    <p class="productPrice">$#UNIT_PRICE#</p>
+            </li>
+            </cfoutput>
 		</ul>
 	</div>
 </div>
