@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 <div id="header">
 	<h1>Fitness Movement</h1>
-	<form id="search-form">
+	<form id="search-form" action="products.cfm">
 		<h2>Search the site</h2>
 		<input type="text" name="q" id="q" />
 		<button id="search-btn">Search Now</button>

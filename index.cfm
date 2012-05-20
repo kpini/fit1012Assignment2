@@ -11,31 +11,14 @@ select * from PP_PARTS where UNITS_ON_HAND > 90
 <cfquery name="getBestProducts" datasource="fit1012" username="fit1012" password="fit1012"> 	
 select * from PP_PARTS where UNIT_PRICE > 200
 </cfquery>
+<cffile action="read"  file="#GetDirectoryFromPath( GetCurrentTemplatePath() )#headline1.txt"  variable="headline1" />
+<cffile action="read"  file="#GetDirectoryFromPath( GetCurrentTemplatePath() )#headline2.txt"  variable="headline2" />
+<cffile action="read"  file="#GetDirectoryFromPath( GetCurrentTemplatePath() )#headline3.txt"  variable="headline3" />
+ 
 <div id="homeSlider">
-	<div class="slide" id="slide-1">
-		<img src="http://placehold.it/620x330/" alt="Placeholder" />
-		<div class="meta-data">
-			<h2>Test Headline 1</h2>
-			<p>Contents that you want people to read in order to entice them clicking on the link below.</p>
-			<p><a href="#">See Stock</a></p>
-		</div>
-	</div>
-	<div class="slide" id="slide-2">
-		<img src="http://placehold.it/620x330/" alt="Placeholder" />
-		<div class="meta-data">
-			<h2>Test Headline 2</h2>
-			<p>Contents that you want people to read in order to entice them clicking on the link below.</p>
-			<p><a href="#">See Stock</a></p>
-		</div>
-	</div>
-	<div class="slide" id="slide-3">
-		<img src="http://placehold.it/620x330/" alt="Placeholder" />
-		<div class="meta-data">
-			<h2>Test Headline 3</h2>
-			<p>Contents that you want people to read in order to entice them clicking on the link below.</p>
-			<p><a href="#">See Stock</a></p>
-		</div>
-	</div>
+	<cfoutput>#headline1#</cfoutput>
+    <cfoutput>#headline2#</cfoutput>
+    <cfoutput>#headline3#</cfoutput>
 </div>
 	
 <div id="featured" class="threeCol">

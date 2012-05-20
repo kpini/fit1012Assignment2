@@ -5,14 +5,14 @@
 <div id="breadcrumbs">
     <p>Breadcrumbs</p>
     <ul>
-        <li><a href="#">Fitness Movement</a></li>
+        <li><a href="index.cfm">Fitness Movement</a></li>
         <li><a href="#">Products</a></li>
     </ul>
 </div>
 
 <h2 id="page-title">Products</h2>
 
-<form id="store-search" method="get" action="">
+<form id="store-search" method="get" action="products.cfm">
 <p>
 	<label for="q">Product Name:</label>
     <input type="text" name="q" id="q" />
@@ -44,31 +44,31 @@
 	<cfquery name="getParts" datasource="fit1012" username="fit1012" password="fit1012">
 		select * from PP_PARTS
 		<!--- Start with Name --->
-		<cfif IsDefined("URL.productName") >
-			where ucase(PART_DESCRIPTION) like ucase('%#URL.productName#%')	
+		<cfif IsDefined("URL.q") >
+			where ucase(PART_DESCRIPTION) like ucase('%#URL.q#%')	
 			<!--- If price range is also used --->
 			<cfif isDefined("URL.priceMin") or IsDefined("URL.priceMax")>
 			AND UNIT_PRICE between
-				<cfif IsDefined("URL.priceMin") >
+				<cfif IsDefined("URL.priceMin") and  IsNumeric("URL.priceMin")>
 					#URL.priceMin#
 				<cfelse>
 					0
 				</cfif>			
-				<cfif IsDefined("URL.priceMax") >
+				<cfif IsDefined("URL.priceMax") and  IsNumeric("URL.priceMax")>
 					and #URL.priceMax#
 				<cfelse>
 					and 500
 				</cfif>
 			</cfif>	
 			<!--- Starting with Price Range --->
-		<cfelseif isDefined("URL.priceMin") or IsDefined("URL.priceMax")>
+		<cfelseif isDefined("URL.priceMin") or isDefined("URL.priceMax")>
 			where UNIT_PRICE between
-			<cfif IsDefined("URL.priceMin") >
+			<cfif isDefined("URL.priceMin") >
 				#URL.priceMin#
 			<cfelse>
 				0
 			</cfif>				
-			<cfif IsDefined("URL.priceMax") >
+			<cfif isDefined("URL.priceMax") >
 				and #URL.priceMax#
 			<cfelse>
 				and 500
