@@ -292,14 +292,244 @@ PAGE DEFAULTS
 	content: '';
 }
 
-h2#page-title {
+h2#page-title,
+span#page-title {
 	font-size: 48px;
 	color: black;
 	font-weight: bold;
 	letter-spacing: -2px;
-	padding-bottom: 20px;
-	margin-bottom: 20px;
-	border-bottom: 5px solid black;
+	margin-bottom: 30px;
+	display: block;
+}
+
+/* Must add additional div for wrapping columns, since
+   adding overflow: hidden to #layout would mean
+	 navigation bar would not appear */
+#page-wrap {
+	overflow: hidden;
+	position: relative;
+}
+
+/* 
+============================================
+ABOUT AND CONTACT PAGE
+============================================
+*/
+
+#about-column {
+	width: 550px;
+}
+
+#about-column p,
+#contact-details p {
+	font-size: 14px;
+	line-height: 28px;
+	color: #333333;
+	margin-bottom: 24px
+}
+
+#about-column p.first {
+	font-size: 21px;
+	line-height: 36px;
+	color: black;
+	letter-spacing: -1px;
+}
+
+#about-column img.about-sidepush {
+	float: right;
+	margin-right: -390px;
+}
+
+#about-sidebar {
+	margin-top: 30px;
+	width: 360px;
+	position: absolute;
+	top: 220px;
+	right: 0;
+}
+
+#about-sidebar h3 {
+	border-top: 5px solid #ff0000;
+	font-size: 16px;
+	color: #ff0000;
+	font-weight: bold;
+	padding: 10px 0;
+}
+
+#about-sidebar dl {
+	border-bottom: 1px solid #dadada;
+	overflow: hidden;
+}
+
+#about-sidebar dl dt,
+#about-sidebar dl dd {
+	font-size: 13px;
+	color: #969696;
+	padding: 10px 0px;
+	border-top: 1px solid #dadada;
+	line-height: 16px;
+}
+
+#about-sidebar dl dt {
+	float: left;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #575757;
+	clear: left;
+	width: 100px;
+}
+
+#about-sidebar dl dd {
+	float: left;
+	width: 260px;
+}
+
+#contact-details {
+	width: 400px;
+	padding-right: 29px;
+	border-right: 1px solid #c0c0c0;
+	float: left;
+}
+
+#contact-details h3 {
+	font-size: 21px;
+	margin: 10px 0;
+	color: #181818;
+	letter-spacing: -1px;
+}
+
+#contact-details dl {
+	border-bottom: 1px solid #dadada;
+	border-top: 4px solid #dadada;
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+#contact-details dl dt,
+#contact-details dl dd {
+	font-size: 14px;
+	color: #424242;
+	padding: 10px 0;
+	border-top: 1px solid #dadada;
+	line-height: 21px;
+	float: left;
+	width: 200px;
+}
+
+#contact-details dl dt {
+	font-weight: bold;
+	text-transform: uppercase;
+	clear: left;
+}
+
+#contact-form {
+	width: 480px;
+	margin-left: 30px;
+	float: left;
+}
+
+#contact-form h3 {
+	font-size: 21px;
+	margin: 10px 0;
+	color: #181818;
+	letter-spacing: -1px;
+	border-bottom: 5px solid #dadada;
+	padding: 0 0 10px;
+}
+
+#contact-form p {
+	margin-bottom: 12px;
+}
+
+#contact-form p.note {
+	font-size: 12px;
+	background-color: #F0F0F0;
+	border: 1px solid #dadada;
+	font-style: italic;
+	padding: 10px;
+	color: #575757;
+}
+
+#contact-form label {
+	width: 150px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #575757;
+	float: left;
+	display: block;
+	padding: 4px 0;
+}
+
+#contact-form input, 
+#contact-form select,
+#contact-form textarea {
+	border: 1px solid #dadada;
+	font-size: 13px;
+	color: #333333;
+	width: 200px;
+}
+
+#contact-form select {
+	width: 204px;
+	padding: 2px;
+}
+
+#contact-form input,
+#contact-form textarea {
+	padding: 2px;
+}
+
+#contact-form textarea {
+	width: 468px;
+	height: 160px;
+	margin-top: 6px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 18px;
+	padding: 5px;
+}
+
+#contact-form input.validateError,
+#contact-form select.validateError,
+#contact-form textarea.validateError {
+	border: 1px solid #F55C61; 
+}
+
+#contact-form button,
+#products-results form button {
+	background: #565656;
+	color: white;
+	font-weight: bold;
+	padding: 7px 15px;
+	font-size: 14px;
+	border: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+#contact-form button:active,
+#products-results form button:active {
+	background: black;
+}
+
+#contact-form button[type=submit] {
+	background: #ff0000;
+}
+
+#contact-form button[type=submit]:active {
+	background: #ec1717;
+}
+
+#contact-form p#errorMsg,
+#products-results p#errorMsg {
+	padding: 10px;
+	background-color: #ff0000;
+	font-size: 12px;
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 /* 
@@ -308,18 +538,411 @@ PRODUCTS PAGE
 ============================================
 */
 
+/* Product Categories Sidebar */
+
+#products-categories {
+	float: left;
+	width: 200px;
+}
+
+#products-categories h3,
+#products-categories h4 {
+	border-top: 5px solid black;
+	padding: 10px 7px;
+	font-size: 18px;
+	color: black;
+	font-weight: bold;
+}
+
+#products-categories ul {
+	border-top: 1px solid #DADADA;
+}
+
+#products-categories ul li {
+	border-bottom: 1px solid #DADADA;
+	font-size: 14px;
+}
+
+#products-categories ul li a {
+	color: #424242;
+	text-decoration: none;
+	display: block;
+	padding: 10px 7px;
+}
+
+#products-categories ul li.selected a,
+#products-categories ul li a:hover {
+	background-color: #EFEFEF;
+}
+
+/* Results */
+
+#products-results {
+	float: right;
+	width: 700px;
+	border-left: 1px solid #c0c0c0;
+	padding-left: 20px;
+}
+
+#products-results h3 {
+	font-size: 24px;
+	color: #969696;
+	margin: 20px 0;
+}
+
 ul#productList {
 	overflow: hidden;
 	margin-right: -20px;
 }
 
 ul#productList li {
-	width: 300px;
+	width: 340px;
 	margin-right: 20px;
 	float: left;
+	border-bottom: 1px solid #dadada;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 ul#productList li img {
 	float: left;
-	margin: 0 24px 12px 0;
+	margin: 0 24px 0 0;
+}
+
+ul#productList li p.productName {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 8px 0 4px;
+	letter-spacing: -1px;
+	color: black;
+}
+
+ul#productList li p.productCode {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #ABABAB;
+}
+
+ul#productList li p.productPrice {
+	font-size: 21px;
+	margin-top: 16px;
+	color: #818181;
+}
+
+/* Search Box */
+
+#products-results form {
+	border-bottom: 1px solid #dadada;
+	border-top: 5px solid black;
+	overflow: hidden;
+	padding: 10px 0;
+}
+
+#products-results form h3 {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+	padding-bottom: 10px;
+	color: #363636;
+	border-bottom: 1px solid #dadada;
+}
+
+#products-results form p.name,
+#products-results form p.price {
+	width: 265px;
+	float: left;
+	padding-right: 8px;
+	margin-right: 13px;
+	border-right: 1px solid #dadada;
+}
+
+#products-results form p.price input,
+#products-results form p.name input {
+	border: 1px solid #dadada;
+	color: #2D2D2D;
+	font-size: 13px;
+	padding: 5px;
+}
+
+#products-results form p.name label,
+#products-results form p.price span {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #969696;
+	display: block;
+	margin-bottom: 6px;
+	font-weight: bold;
+}
+
+#products-results form p.price label {
+	font-size: 11px;
+	color: #969696;
+	text-transform: uppercase;
+	margin-right: 5px;
+}
+
+#products-results form p.price input {
+	width: 75px;
+}
+
+#products-results form p.price input#priceMin {
+	margin-right: 14px;
+}
+
+#products-results form p.name input {
+	width: 245px;
+}
+
+#products-results form button {
+	text-transform: none;
+}
+
+#products-results p#errorMsg {
+	margin: 10px 0;
+}
+
+/* Product Details */
+
+#products-details {
+	float: left;
+	width: 700px;
+	border-right: 1px solid #c0c0c0;
+	padding-right: 20px;
+	margin-right: 19px;
+	overflow: hidden;
+}
+
+#products-details #item-header {
+	overflow: hidden;
+	padding: 20px 0;
+	margin-bottom: 20px;
+	border-top: 5px solid black;
+	border-bottom: 1px solid #dadada;
+}
+
+#products-details #item-description {
+	width: 420px;
+	float: right;
+}
+
+#products-details img {
+	float: right;
+	margin-left: 20px;
+}
+
+#products-details h2 {
+	font-size: 32px;
+	color: black;
+	font-weight: bold;
+	letter-spacing: -1px;
+	margin-top: 4px;
+}
+
+#products-details h3 {
+	margin-bottom: 20px;
+	font-size: 21px;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#products-details p {
+	font-size: 14px;
+	color: #333333;
+	line-height: 28px;
+	margin-bottom: 24px;
+}
+
+#products-details #item-header p {
+	color: #575757; 
+}
+
+#products-details #item-header p span {
+	font-size: 28px;
+	letter-spacing: -1px;
+	display: block;
+	font-weight: normal;
+}
+
+#products-details #item-header p.itemNumber {
+	font-size: 13px;
+	color: #969696;
+	margin: 6px 0px 18px;
+	line-height: 18px;
+}
+
+#products-details #item-sidebar {
+	width: 250px;
+	float: left;
+}
+
+#products-details #item-sidebar dl {
+	border: 1px solid #dadada;
+	border-top: none;
+	overflow: hidden;
+}
+
+#products-details #item-sidebar dl dt {
+	padding: 7px;
+	font-size: 13px;
+	font-weight: bold;
+	float: left;
+	width: 85px;
+	border-top: 1px solid #dadada;
+	text-transform: uppercase;
+	clear: both;
+}
+
+#products-details #item-sidebar dl dd {
+	font-size: 12px;
+	padding: 7px;
+	float: left;
+	width: 135px;
+	border-top: 1px solid #dadada;
+}
+
+#products-details #how-to-order {
+	clear: both;
+	border: 1px solid #dadada;
+	background-color: #F0F0F0;
+	padding: 16px;
+	margin-top: 30px;
+}
+
+#products-details #how-to-order h3 {
+	margin-bottom: 10px;
+}
+
+#products-details #how-to-order p {
+	margin-bottom: 0;
+	font-size: 16px;
+	color: #6C6C6C;
+}
+
+/* 
+============================================
+FITNESS TIPS
+============================================
+*/
+
+#fitness-article {
+	float: left;
+	width: 700px;
+	border-right: 1px solid #c0c0c0;
+	padding-right: 20px;
+	margin-right: 19px;
+	overflow: hidden;
+}
+
+#fitness-article .article-header {
+	margin-bottom: 30px;
+}
+
+#fitness-article .article-image {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+}
+
+#fitness-article .article-header .article-title-overlay {
+	width: 500px;
+	padding: 20px 30px 0px 0px;
+	background: white;
+	position: relative;
+	z-index: 2;
+	margin-top: 240px;
+}
+
+#fitness-article .article-header .article-title-overlay span {
+	margin-bottom: 10px;
+	display: block;
+	font-weight: bold;
+	font-size: 16px;
+	color: #ff0000;
+	text-transform: uppercase;
+}
+
+#fitness-article .article-header .article-title-overlay h2 {
+	font-size: 48px;
+	color: black;
+	font-weight: bold;
+	letter-spacing: -2px;
+}
+
+#fitness-article .article-content {
+	width: 500px;
+	float: left;
+}
+
+#fitness-article .article-content p {
+	font-size: 14px;
+	line-height: 24px;
+	margin-bottom: 24px;
+	color: #333333;
+}
+
+#fitness-article .article-metadata {
+	width: 170px;
+	float: right;
+}
+
+#fitness-article .article-metadata h3 {
+	width: 1px;
+	height: 1px;
+	left: -999em;
+	position: absolute;
+	display: block;
+}
+
+#fitness-article .article-metadata ul {
+	border-top: 5px solid #dadada;
+}
+
+#fitness-article .article-metadata ul li {
+	font-size: 13px;
+	padding: 15px 0;
+	border-bottom: 1px solid #dadada;
+	color: #818181;
+}
+
+#fitness-article .article-metadata ul li span {
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 4px;
+}
+
+#fitness-article-archives {
+	width: 200px;
+	float: right;
+}
+
+#fitness-article-archives h4 {
+	padding: 10px 7px;
+	font-size: 14px;
+	color: black;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#fitness-article-archives ul {
+	border-top: 5px solid black;
+}
+
+#fitness-article-archives ul li {
+	border-bottom: 1px solid #DADADA;
+	padding: 15px 10px;
+	font-size: 14px;
+	color: #818181;
+}
+
+#fitness-article-archives ul li a {
+	color: black;
+	font-weight: bold;
+	font-size: 21px;
+	letter-spacing: -1px;
+	text-decoration: none;
+	margin-bottom: 8px;
+	line-height: 28px;
+	display: block;
 }

@@ -7,6 +7,7 @@
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/core.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 	$('#homeSlider').bxSlider({
