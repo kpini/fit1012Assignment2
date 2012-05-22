@@ -3,9 +3,9 @@
 <div id="navigation">
 	<ul id="mainNav">
 		<li class="products"><a href="products.cfm">Products</a></li>
-		<li class="fitness"><a href="#">Fitness Tips</a></li>
-		<li class="about"><a href="#">About Us</a></li>
-		<li class="contact"><a href="#">Contact</a></li>
+		<li class="fitness"><a href="fitness-tips.cfm">Fitness Tips</a></li>
+		<li class="about"><a href="about.cfm">About Us</a></li>
+		<li class="contact"><a href="contact.cfm">Contact</a></li>
 	</ul>
 </div>
 

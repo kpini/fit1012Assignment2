@@ -88,7 +88,7 @@
 			<ul id="productList">
 			<cfoutput query="getParts">
 				<li>
-					<img src="http://placehold.it/90x90/" alt="Placeholder" />
+					<img src="img/products/thumbnails/#lcase(PART_NUMBER)#.JPG" alt="#PART_DESCRIPTION#" />
 					<p class="productName">#PART_DESCRIPTION#</p>
 					<p class="productCode">#PART_NUMBER#</p>
 					<p class="productPrice">$#UNIT_PRICE#</p>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="footer.cfm" server="fit1012.infotech.monash.edu/www/" local="129819507942343750" remote="129819524730000000" />
-<file name="header.cfm" server="fit1012.infotech.monash.edu/www/" local="129819517990468750" remote="129819535410000000" />
-<file name="index.cfm" server="fit1012.infotech.monash.edu/www/" local="129819539588281250" remote="129819556280000000" />
-<file name="products.cfm" server="fit1012.infotech.monash.edu/www/" local="129819527357968750" remote="129819543990000000" />
-<file name="headline1.txt" server="fit1012.infotech.monash.edu/www/" local="129819538122187500" remote="129819556410000000" />
-<file name="headline2.txt" server="fit1012.infotech.monash.edu/www/" local="129819538325625000" remote="129819556410000000" />
-<file name="headline3.txt" server="fit1012.infotech.monash.edu/www/" local="129819538529375000" remote="129819556410000000" />
+<file name="footer.cfm" server="fit1012.infotech.monash.edu/www/" local="129821236810000000" remote="129821253430000000" />
+<file name="header.cfm" server="fit1012.infotech.monash.edu/www/" local="129821225485937500" remote="129821243780000000" />
+<file name="index.cfm" server="fit1012.infotech.monash.edu/www/" local="129821225490000000" remote="129821248280000000" />
+<file name="products.cfm" server="fit1012.infotech.monash.edu/www/" local="129821234494062500" remote="129821251010000000" />
+<file name="about.cfm" server="fit1012.infotech.monash.edu/www/" local="129821225485781250" remote="129821248240000000" />
+<file name="contact.cfm" server="fit1012.infotech.monash.edu/www/" local="129821245608125000" remote="129821262120000000" />
+<file name="fitness-tips.cfm" server="fit1012.infotech.monash.edu/www/" local="129821225485937500" remote="129821248270000000" />
+<file name="productPage.cfm" server="fit1012.infotech.monash.edu/www/" local="129821225490312500" remote="129821248280000000" />
 </dwsync>

@@ -1,4 +1,14 @@
 <!--- Header --->
+<cfif IsDefined("Form.contactName")>
+    <cfmail
+        from="#Form.contactEmail#"
+        to="pkra4@student.monash.edu"
+        subject="#Form.contactSubject#">
+    
+    #Form.contactName# says: #Form.contactMessage#, contact phone is #Form.contactPhone#
+    
+    </cfmail>
+</cfif>
 <cfinclude template="header.cfm" />
 
 <!--- Page contents can go here --->
