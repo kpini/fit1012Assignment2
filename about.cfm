@@ -1,4 +1,6 @@
 <!--- Header --->
+<cfset pageTitle="About Us" />
+<cfset bodyClass="about" />
 <cfinclude template="header.cfm" />
 
 <!--- Page contents can go here --->
@@ -16,7 +18,7 @@
 
 <div id="about-column">
 
-<img class="about-sidepush" src="http://placehold.it/360x220/" alt="Placeholder" />
+<img class="about-sidepush" src="img/the-melbourne-store.jpg" width="360" height="220" alt="Image of outside our Melbourne Store" />
 
 <p class="first">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 

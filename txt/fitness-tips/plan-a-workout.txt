@@ -1,10 +1,10 @@
 		<div class="article-header">
 			<div class="article-image">
-				<img src="img/fitness-tips/treadmill-room.jpg" width="700" height="375" alt="Picture of treadmills in a room" />
+				<img src="img/fitness-tips/woman-workout.jpg" width="700" height="375" alt="Woman working out in a gym" />
 			</div>
 			<div class="article-title-overlay">
 				<span class="section-title">Fitness Tips &raquo;</span>
-				<h2 class="article-title">Exercise Basics</h2>
+				<h2 class="article-title">How to Plan A Workout</h2>
 			</div>
 		</div>
 		<div class="article-content">
@@ -20,7 +20,7 @@
 			<ul>
 				<li class="article-date">
 					<span class="metadata-title">Date:</span>
-					12 May 2012
+					10 May 2012
 				</li>
 				<li class="article-author">
 					<span class="metadata-title">Author:</span>

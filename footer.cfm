@@ -13,7 +13,7 @@
 
 <div id="footer">
 <p>&copy; 2012 Premier Products, LLC. All Rights Reserved.</p>
-<p>Designed by xxx and xxx</p>
+<p>Designed by Terence Huynh and Pinchas Krakovich</p>
 </div>
 
 </body>

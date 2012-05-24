@@ -1,23 +1,22 @@
-<!--- Header --->
+<!--- Call Mail Script  --->
 <cfif IsDefined("Form.contactName")>
-    <cfmail
-        from="#Form.contactEmail#"
-        to="pkra4@student.monash.edu"
-        subject="#Form.contactSubject#">
-    
-    #Form.contactName# says: #Form.contactMessage#, contact phone is #Form.contactPhone#
-    
-    </cfmail>
+	<cfmail server="smtp.monash.edu" from="#Form.contactEmail#" to="pkra4@student.monash.edu" subject="#Form.contactSubject#"> 
+		#Form.contactName# says: #Form.contactMessage#, contact phone is #Form.contactPhone#
+	</cfmail>
 </cfif>
+
+<!--- Header  --->
+<cfset pageTitle="Contact Us" />
+<cfset bodyClass="contact" />
 <cfinclude template="header.cfm" />
 
 <!--- Page contents can go here --->
 <div id="breadcrumbs">
-    <p>Breadcrumbs</p>
-    <ul>
-        <li><a href="index.cfm">Fitness Movement</a></li>
-        <li><a href="contact.cfm">Contact</a></li>
-    </ul>
+		<p>Breadcrumbs</p>
+		<ul>
+				<li><a href="index.cfm">Fitness Movement</a></li>
+				<li><a href="contact.cfm">Contact</a></li>
+		</ul>
 </div>
 
 <h2 id="page-title">Contact Us</h2>
@@ -41,18 +40,19 @@
 		<dd>
 			123 Fake Street, <br />
 			Melbourne, <br />
-			<abbr name="Victoria">VIC</abbr>, 3000
+			<abbr title="Victoria">VIC</abbr>, 3000
 		</dd>
 		<dt>Sydney Office</dt>
 		<dd>
 			Lv 12, 1 George Street, <br />
 			Sydney, <br />
-			<abbr name="New South Wales">NSW</abbr>, 2000
+			<abbr title="New South Wales">NSW</abbr>, 2000
 		</dd>
 	</dl>
 </div>
 
 <div id="contact-form">
+	<cfif !IsDefined("Form.contactName")>
 	<h3>Send us an Email</h3>
 	<form action="" method="post" onsubmit="validateContactForm(this); return false;">
 		<p id="requiredAlert" class="note">All fields are required to be filled.</p>
@@ -71,7 +71,7 @@
 		<p>
 			<label for="contactSubject">Subject</label>
 			<select name="contactSubject" id="contactSubject">
-				<option value="" selected="">Please select one...</option>
+				<option value="" selected="selected">Please select one...</option>
 				<option value="Product Enquiry">Product Enquiry</option>
 				<option value="Sales Support">Sales Support</option>
 				<option value="Website Feedback">Website Feedback</option>
@@ -81,13 +81,17 @@
 		</p>
 		<p>
 			<label for="contactMessage">Enquiry Description</label>
-			<textarea name="contactMessage" id="contactMessage"></textarea>
+			<textarea name="contactMessage" id="contactMessage" cols="300" rows="300"></textarea>
 		</p>
 		<p>
 			<button id="sendEmail" type="submit">Send Message</button>
 			<button id="resetForm" type="reset">Reset Form</button>
 		</p>
 	</form>
+	<cfelse>
+	<h3>Thanks!</h3>
+	<p class="message">We will be in touch with you soon.</p>
+	</cfif>
 </div>
 
 </div>

@@ -35,6 +35,12 @@ body {
 	text-indent: -999em;
 }
 
+#header h1 a {
+	display: block;
+	width: 185px;
+	height: 46px;
+}
+
 #footer {
 	padding: 25px 0 55px;
 	border-top: 6px solid #dfdfdf;
@@ -66,7 +72,7 @@ body {
 #header form#search-form input[type=text] {
 	height: 24px;
 	width: 124px;
-	background: url(../img/search-text.png) top left no-repeat;
+	background: url(../img/search-sprite.png) 0 0 no-repeat;
 	font-size: 12px;
 	color: #6C6C6C;
 	border: 0;
@@ -75,12 +81,16 @@ body {
 }
 
 #header form#search-form button {
-	background: url(../img/search-button-nohover.png) top left no-repeat;
+	background: url(../img/search-sprite.png) 0 -32px no-repeat;
 	height: 32px;
 	width: 32px;
 	text-indent: -999em;
 	border: 0;
 	float: right;
+}
+
+#header form#search-form button:hover {
+	background: url(../img/search-sprite.png) 0 -64px no-repeat;
 }
 
 /* Navigation */
@@ -112,9 +122,15 @@ body {
 	text-decoration: none;
 }
 
-#navigation ul#mainNav li a:hover,
-#navigation ul#mainNav li.selected a {
-	background-color: #ae0c0c;
+#navigation ul#mainNav li a:hover {
+	background-color: #dd1010;
+}
+
+body.products #navigation ul#mainNav li.products a,
+body.fitness #navigation ul#mainNav li.fitness a,
+body.about #navigation ul#mainNav li.about a,
+body.contact #navigation ul#mainNav li.contact a {
+	background-color: #b00c0c;
 }
 
 /* 
@@ -126,12 +142,12 @@ HOMEPAGE
 /* Columns */
 .threeCol {
 	overflow: hidden;
-	margin-top: 25px;
+	margin-top: 30px;
+	margin-bottom: 5px;
 }
 
 #featured.threeCol {
-	border-bottom: 1px solid #dfdfdf;
-	padding-bottom: 30px;
+	margin-bottom: 40px;
 }
 
 .threeCol .col {
@@ -146,32 +162,22 @@ HOMEPAGE
 
 .threeCol .col h3 {
 	font-size: 24px;
-	margin-bottom: 12px;
+	padding-bottom: 12px;
 	color: black;
 	font-weight: bold;
 	letter-spacing: -1px;
+	border-bottom: 3px solid black;
 }
 
 .threeCol .col ul li {
 	margin-bottom: 12px;
+	padding-top: 12px;
+	border-top: 1px solid #dadada;
 	overflow: hidden;
 }
 
-.threeCol .col ul li img {
-	float: left;
-	margin-right: 12px;
-}
-
-.threeCol .col ul li p.productName {
-	font-size: 16px;
-	font-weight: bold;
-	margin-top: 12px;
-	margin-bottom: 12px;
-}
-
-.threeCol .col ul li p.productPrice {
-	font-size: 13px;
-	color: #969696;
+.threeCol .col ul li:first-child {
+	border-top: none;
 }
 
 /* Slider */
@@ -321,7 +327,8 @@ ABOUT AND CONTACT PAGE
 }
 
 #about-column p,
-#contact-details p {
+#contact-details p,
+#contact-form p.message {
 	font-size: 14px;
 	line-height: 28px;
 	color: #333333;
@@ -575,7 +582,7 @@ PRODUCTS PAGE
 	background-color: #EFEFEF;
 }
 
-/* Results */
+/* Results and Three-Col Results on Home Page */
 
 #products-results {
 	float: right;
@@ -604,12 +611,14 @@ ul#productList li {
 	margin-bottom: 20px;
 }
 
-ul#productList li img {
+ul#productList li img,
+.threeCol .col ul li img {
 	float: left;
 	margin: 0 24px 0 0;
 }
 
-ul#productList li p.productName {
+ul#productList li p.productName,
+.threeCol .col ul li p.productName {
 	font-size: 18px;
 	font-weight: bold;
 	margin: 8px 0 4px;
@@ -617,13 +626,21 @@ ul#productList li p.productName {
 	color: black;
 }
 
-ul#productList li p.productCode {
+ul#productList li p.productName a,
+.threeCol .col ul li p.productName a {
+	color: black;
+	text-decoration: none;
+}
+
+ul#productList li p.productCode,
+.threeCol .col ul li p.productCode {
 	font-size: 12px;
 	text-transform: uppercase;
 	color: #ABABAB;
-}
+} 
 
-ul#productList li p.productPrice {
+ul#productList li p.productPrice,
+.threeCol .col ul li p.productPrice {
 	font-size: 21px;
 	margin-top: 16px;
 	color: #818181;
@@ -849,7 +866,7 @@ FITNESS TIPS
 	background: white;
 	position: relative;
 	z-index: 2;
-	margin-top: 240px;
+	margin-top: 300px;
 }
 
 #fitness-article .article-header .article-title-overlay span {
@@ -866,6 +883,7 @@ FITNESS TIPS
 	color: black;
 	font-weight: bold;
 	letter-spacing: -2px;
+	line-height: 56px;
 }
 
 #fitness-article .article-content {

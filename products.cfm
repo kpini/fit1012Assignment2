@@ -1,4 +1,6 @@
 <!--- Header --->
+<cfset pageTitle="Products" />
+<cfset bodyClass="products" />
 <cfinclude template="header.cfm" />
 
 <!--- Page contents can go here --->
@@ -17,9 +19,9 @@
 		<h3>Product Categories</h3>
 		<ul>
 			<li<cfif !IsDefined("URL.cat")> class="selected"</cfif>><a href="products.cfm">All Products</a></li>
-			<li<cfif IsDefined("URL.cat") and #URL.cat# is "AP"> class="selected"</cfif>><a href="products.cfm?cat=AP">Applications</a></li>
-			<li<cfif IsDefined("URL.cat") and #URL.cat# is "HW"> class="selected"</cfif>><a href="products.cfm?cat=HW">Homewares</a></li>
-			<li<cfif IsDefined("URL.cat") and #URL.cat# is "SG"> class="selected"</cfif>><a href="products.cfm?cat=SG">Sporting Goods</a></li>
+            <li<cfif IsDefined("URL.cat") and #URL.cat# is "HW"> class="selected"</cfif>><a href="products.cfm?cat=HW">Apparel</a></li>
+			<li<cfif IsDefined("URL.cat") and #URL.cat# is "AP"> class="selected"</cfif>><a href="products.cfm?cat=AP">Shoes</a></li>
+			<li<cfif IsDefined("URL.cat") and #URL.cat# is "SG"> class="selected"</cfif>><a href="products.cfm?cat=SG">Equipment</a></li>
 		</ul>
 	</div>
 	<div id="products-results">
@@ -27,7 +29,7 @@
 		<h3>Search</h3>
 		<p class="name">
 			<label for="q">By product name:</label>
-			<input type="text" name="q" id="q" />
+			<input type="text" name="q" id="q-top" />
 		</p>
 		<p class="price">
 			<span>Or by price:</span>
@@ -37,18 +39,18 @@
 			<input type="text" name="priceMax" id="priceMax" />
 		</p>
 		<p>
-			<button id="search-btn" type="submit">Search Now</button>
+			<button id="search-btn-form" type="submit">Search Now</button>
 		</p>
 		</form>
 		<div id="search-query">
 			<cfif IsDefined("URL.q") or isDefined("URL.priceMin") or IsDefined("URL.priceMax")>
 			<h3>Search Results</h3>
 			<cfelseif IsDefined("URL.cat") and #URL.cat# is "AP">
-			<h3>Viewing All Category 1</h3>
+			<h3>Viewing All Shoes</h3>
 			<cfelseif IsDefined("URL.cat") and #URL.cat# is "HW">
-			<h3>Viewing All Category 2</h3>
+			<h3>Viewing All Apparel</h3>
 			<cfelseif IsDefined("URL.cat") and #URL.cat# is "SG">
-			<h3>Viewing All Category 3</h3>
+			<h3>Viewing All Equipment</h3>
 			<cfelse>
 			<h3>Viewing All Products</h3>
 			</cfif>
@@ -88,8 +90,8 @@
 			<ul id="productList">
 			<cfoutput query="getParts">
 				<li>
-					<img src="img/products/thumbnails/#lcase(PART_NUMBER)#.JPG" alt="#PART_DESCRIPTION#" />
-					<p class="productName">#PART_DESCRIPTION#</p>
+					<a href="productPage.cfm?id=#lcase(PART_NUMBER)#"><img src="img/products/thumbnails/#lcase(PART_NUMBER)#.JPG" alt="#PART_DESCRIPTION#" /></a>
+					<p class="productName"><a href="productPage.cfm?id=#lcase(PART_NUMBER)#">#PART_DESCRIPTION#</a></p>
 					<p class="productCode">#PART_NUMBER#</p>
 					<p class="productPrice">$#UNIT_PRICE#</p>
 				</li>

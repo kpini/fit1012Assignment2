@@ -1,24 +1,24 @@
 <div class="slide" id="slide-1">
-	<img src="http://placehold.it/620x330/" alt="Placeholder" />
+	<img src="img/homepage/slider-washer.jpg" width="620" height="330" alt="Picture of the Washer shoes" />
 	<div class="meta-data">
-		<h2>Test Headline 1</h2>
-		<p>Contents that you want people to read in order to entice them clicking on the link below.</p>
-		<p><a href="#">See Stock</a></p>
+		<h2>Introducing the 'Washer'</h2>
+		<p>Brand new shoes, and exclusively available from Fitness Movement.</p>
+		<p><a href="productPage.cfm?id=bz66">Buy the shoes &raquo;</a></p>
 	</div>
 </div>
 <div class="slide" id="slide-2">
-	<img src="http://placehold.it/620x330/" alt="Placeholder" />
+	<img src="img/homepage/slider-basketball.jpg" width="620" height="330" alt="Picture of guys playing Basketball" />
 	<div class="meta-data">
-		<h2>Test Headline 2</h2>
-		<p>Contents that you want people to read in order to entice them clicking on the link below.</p>
-		<p><a href="#">See Stock</a></p>
+		<h2>We know Sports</h2>
+		<p>Fitness Movement is run by people who love sport, and we choose the best products that enhance your fitness performance.</p>
+		<p><a href="products.cfm">See Our Products &raquo;</a></p>
 	</div>
 </div>
 <div class="slide" id="slide-3">
-	<img src="http://placehold.it/620x330/" alt="Placeholder" />
+	<img src="img/homepage/slider-treadmill.jpg" width="620" height="330" alt="Picture of treadmills in a room" />
 	<div class="meta-data">
-		<h2>Test Headline 3</h2>
-		<p>Contents that you want people to read in order to entice them clicking on the link below.</p>
-		<p><a href="#">See Stock</a></p>
+		<h2>Need help with keeping fit?</h2>
+		<p>John Smith writes our daily Fitness Tips section, so you can get the most of your equipment and exercise plan.</p>
+		<p><a href="fitness-tips.cfm">Read the latest tip &raquo;</a></p>
 	</div>
 </div>
